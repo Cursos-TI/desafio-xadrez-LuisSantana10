@@ -10,6 +10,21 @@ int main() {
 int bispo;
 int torre = 1;
 int rainha = 1;
+int escolha1, escolha2;
+
+do
+{
+    printf("*** Xadrez ***\n");
+    printf("Bem vindo(a) ao jogo de xadrez!\n");
+    printf("Selecione qual peça deve ser movimentada:\n");
+    printf("1. Bispo\n");
+    printf("2. Torre\n");
+    printf("3. Rainha\n");
+    scanf("%d", &escolha1);
+
+    switch (escolha1)
+    {
+    case 1:
     // Movimentação do Bispo
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
 
@@ -18,7 +33,8 @@ int rainha = 1;
     {
         printf("Cima/Direita\n");
     }
-    
+        break;
+    case 2:
     // Movimentação da Torre
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
 
@@ -30,7 +46,8 @@ int rainha = 1;
         
         torre++;
     }
-    
+        break;
+    case 3:
     // Movimentação da Rainha
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
 
@@ -40,6 +57,36 @@ int rainha = 1;
         printf("Esquerda\n");
         rainha++;
     } while (rainha <= 8);
+        break;
+    
+    default:
+        printf("Opção inválida\n");
+        break;
+    }
+
+    printf("*** Xadrez ***\n");
+    printf("Ação concluída, selecione:\n");
+    printf("1. Recomeçar\n");
+    printf("2. Sair\n");
+    scanf(" %d", &escolha2);
+    switch (escolha2)
+    {
+    case 1:
+        printf("Recomeçando...\n");
+        break;
+    case 2:
+        printf("Saindo...\n");
+        break;
+    
+    default:
+        printf("Opção inválida.\n");
+        break;
+    }
+    
+    
+    
+} while (escolha2 != 2); 
+    
     
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
