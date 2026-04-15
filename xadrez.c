@@ -10,6 +10,7 @@ int main() {
 int bispo;
 int torre = 1;
 int rainha = 1;
+int cavalo, cavaloCompleto;
 int escolha1, escolha2;
 
 do
@@ -20,6 +21,7 @@ do
     printf("1. Bispo\n");
     printf("2. Torre\n");
     printf("3. Rainha\n");
+    printf("4. Cavalo\n");
     scanf("%d", &escolha1);
 
     switch (escolha1)
@@ -58,6 +60,25 @@ do
         rainha++;
     } while (rainha <= 8);
         break;
+    case 4:
+    // Movimentação do Cavalo
+
+    printf("Movimentação do cavalo:\n");
+    for (cavaloCompleto = 1; cavaloCompleto == 1; cavaloCompleto--)
+    {
+        cavalo = 0;
+        while (cavalo < 2)
+        {
+            printf("Baixo\n");
+            cavalo++;
+        }
+        
+        printf("Esquerda\n");
+
+    }
+    
+
+    break;
     
     default:
         printf("Opção inválida\n");
