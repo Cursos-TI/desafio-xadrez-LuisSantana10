@@ -1,16 +1,58 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+
+// Mover o bispo
+void MoverBispo(int casas){
+    if (casas > 0)
+    {
+        printf("Cima/Direita\n");
+        MoverBispo(casas - 1);
+    }
+    
+}
+
+
+// Mover a torre
+void MoverTorre(int casas){
+    if (casas > 0)
+    {
+        printf("Direita\n");
+        MoverTorre(casas - 1);
+    }
+    
+}
+
+
+// Mover o rainha
+void MoverRainha(int casas){
+    if (casas > 0)
+    {
+        printf("Esquerda\n");
+        MoverRainha(casas - 1);
+    }
+    
+}
+
+
+// Mover o cavalo
+void MoverCavalo(int casas){
+    if (casas > 0)
+    {
+        printf("Baixo\n");
+        MoverCavalo(casas - 1);
+    }
+    
+}
+
+
 
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-int bispo;
-int torre = 1;
-int rainha = 1;
-int cavalo, cavaloCompleto;
+int bispo, casasbispo;
+int torre = 1, casastorre;
+int rainha = 1, casasrainha;
+int cavalo, cavaloCompleto, casascavalo;
 int escolha1, escolha2;
 
 do
@@ -31,53 +73,38 @@ do
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
 
     printf("Movimentação do bispo: \n");
-    for (int i = 0; i < 5; i++)
-    {
-        printf("Cima/Direita\n");
-    }
+    printf("Escolha quantas casas você quer mover: ");
+    scanf("%d", &casasbispo);
+    MoverBispo(casasbispo);
+    
         break;
     case 2:
     // Movimentação da Torre
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-
     printf("Movimentação da torre:\n");
-    while (torre <= 5)
-    {
-        
-        printf("Direita\n");
-        
-        torre++;
-    }
+    printf("Escolha quantas casas você quer mover: ");
+    scanf("%d", &casastorre);
+
+    MoverTorre(casastorre);
         break;
     case 3:
     // Movimentação da Rainha
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
 
     printf("Movimentação da rainha:\n");
-    do
-    {
-        printf("Esquerda\n");
-        rainha++;
-    } while (rainha <= 8);
+    printf("Escolha quantas casas você quer mover: ");
+    scanf("%d", &casasrainha);
+
+    MoverTorre(casasrainha);
         break;
     case 4:
     // Movimentação do Cavalo
 
     printf("Movimentação do cavalo:\n");
-    for (cavaloCompleto = 1; cavaloCompleto == 1; cavaloCompleto--)
-    {
-        cavalo = 0;
-        while (cavalo < 2)
-        {
-            printf("Baixo\n");
-            cavalo++;
-        }
-        
-        printf("Esquerda\n");
+    printf("Escolha quantas casas você quer mover: ");
+    scanf("%d", &casascavalo);
 
-    }
-    
-
+    MoverTorre(casascavalo);
     break;
     
     default:
